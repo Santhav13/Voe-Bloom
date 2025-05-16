@@ -1,0 +1,288 @@
+/* Fuente bonita (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  padding-bottom: 100px; /* Agregar espacio para el footer */
+}
+
+/* 🏠 Portada */
+header {
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: #b84e72;
+}
+
+/* Estilos para el carrito */
+#ver-carrito {
+  font-size: 1.2rem;
+  border-color: #b84e72;
+  color: #b84e72;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+#ver-carrito:hover {
+  background-color: #b84e72;
+  color: white;
+}
+
+/* 🧴 Carrusel de productos */
+#carouselProductos {
+  width: 100%;           /* Que ocupe el 100% del ancho */
+  margin: 10px auto;    /* Centrado horizontalmente y con espacio arriba/abajo */
+  height: 420px;        /* Altura reducida para hacerlo más horizontal */
+  max-height: 420px;
+  border-radius: 15px;  /* Bordes redondeados si deseas */
+  overflow: hidden;     /* Oculta el desborde si hay */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra opcional */
+}
+.carousel-item img {
+  height: 100%; /* Las imágenes llenan el 100% de la altura del contenedor */
+  width: auto; /* Ajusta las imágenes al 100% del ancho del contenedor */
+  margin: 0 auto;          /* ← Centra horizontalmente */
+  object-fit: contain; /*  Imágenes cubran el espacio sin distorsionarse */
+  object-position: center; /* Centra la imagen dentro del contenedor */
+  background-color: #fffafc; /* Fondo blanco para las imágenes */
+  border-radius: 10px;
+}
+
+/* Estilo del caption */
+.carousel-caption {
+  position: absolute;  /* Posiciona el caption sobre la imagen */
+  bottom: 10px;  /* Coloca el texto a 20px del borde inferior */
+  left: 50%; /* Centra el caption horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centro del caption */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejorar la visibilidad */
+  color: white;  /* Color blanco para el texto */
+  padding: 15px;  /* Espacio alrededor del texto */
+  border-radius: 10px;  /* Bordes redondeados */
+  text-align: center;  /* Centra el texto */
+  width: 90%; /* Hace que el caption no ocupe todo el ancho, sino solo un 90% */
+}
+
+/* Estilo de los controles prev/next del carrusel */
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 50%; /* Lo coloca verticalmente al centro */
+  transform: translateY(-50%); /* Ajusta el control para que esté completamente centrado */
+  z-index: 10; /*  Controles estén encima del carrusel */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro y semi-transparente para los controles */
+  border-radius: 50%;
+  padding: 8px; /* Ajusta el padding para que no estén demasiado grandes */
+}
+
+/* Estilo del ícono de los controles */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #fff; /* Color de los íconos */
+  width: 30px;  /* Reducir el tamaño de los íconos */
+  height: 30px; /* Reducir el tamaño de los íconos */
+  background-size: 50%; /* Tamaño más pequeño para el ícono */
+  border-radius: 50%;
+}
+
+/* Área clickeable de los botones sea más grande sin cambiar el tamaño del ícono */
+.carousel-control-prev, .carousel-control-next {
+  width: 50px;  /* Aumenta el tamaño del área clickeable */
+  height: 50px; /* Aumenta el tamaño del área clickeable */
+}
+
+
+/* 🧴 Tarjetas de productos */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.alerta-producto {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #198754;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.alerta-producto.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+#notificacion {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1200;
+}
+
+/* 🧭 Menú lateral */
+nav.navbar {
+  width: 200px;
+  padding-top: 2rem;
+  background-color: #fce8ee !important;
+  border-right: 2px solid #b84e72;
+  z-index: 1030; /* Asegura que quede por encima */
+  position: fixed;
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b84e72;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #b84e72;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: #b84e72;
+  font-weight: 500;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #a83d64;
+  background-color: #ffeef3;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+/* Estilo para cuando el menú está colapsado en pantallas pequeñas */
+@media (max-width: 768px) {
+  nav.navbar {
+    width: 100%;
+    position: relative; /* El menú se despliega dentro de la pantalla */
+  }
+  .navbar-collapse {
+    background-color: #fce8ee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+  .navbar-toggler-icon {
+    background-color: #b84e72; /* El color de las líneas del ícono */
+  }
+}
+
+main {
+  margin-left: 210px; /* Deja espacio para el menú lateral */
+}
+
+/* 📝 Formulario de Contacto */
+#contacto {
+  position: relative;
+  padding-top: 50px; /* Agregar un pequeño padding para no estar pegado al borde superior */
+  margin-top: 50px; /* Espacio superior para separar del resto del contenido */
+  min-height: 50vh; /* Asegura que el formulario ocupe al menos la mitad de la altura de la ventana */
+  margin-left: 210px; 
+}
+
+#form-contacto {
+  background-color: #fff;
+  border: 2px solid #b84e72; /* Hacer que el borde sea visible para saber si está presente */
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Contenido de formulario */
+#form-contacto .form-label {
+  font-weight: bold;
+  color: #b84e72;
+}
+
+#form-contacto .form-control {
+  border-radius: 5px;
+  border: 1px solid #b84e72;
+}
+
+#form-contacto .form-control:focus {
+  border-color: #a83d64;
+}
+
+#form-contacto button {
+  background-color: #b84e72;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#form-contacto button:hover {
+  background-color: #a83d64;
+}
+
+#form-contacto .mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+#contacto {
+  margin-left: 210px; /* Respetar el espacio del menú lateral */
+}
+
+body footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 2px solid #b84e72;
+  color: #333;
+}
+
