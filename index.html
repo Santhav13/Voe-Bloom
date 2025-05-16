@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Voé Bloom | Productos de Belleza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+  <!-- EmailJS SDK -->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- 🏠 Portada -->
+  <header class="container-fluid bg-light py-4">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="display-4">Voé Bloom</h1>
+        <p>Tu tienda online de productos de belleza</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 📋 Menú de navegación lateral -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed top-0 start-0 h-100" style="z-index: 1050;">
+    <div class="container-fluid flex-column">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Menú</a>
+      <div class="collapse navbar-collapse" id="menuLateral">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item"><a class="nav-link active" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tips">Tips</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main style="margin-left: 210px;">
+    
+    <!-- 🧴 Carrusel de productos -->
+    <section class="container my-5">
+      <h2 class="text-center mb-4">Nuestros Productos Destacados</h2>
+      <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="Img/Labial.png" class="d-block img-carrusel" alt="Imagen de Labial Rojo Pasión, color intenso 24h, 5ml" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Labial Rojo Pasión</h5>
+              <p>Color intenso 24h - 5ml - $25.000</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Img/Shampo.jpg" class="d-block img-carrusel" alt="Imagen de Shampoo Vitael con keratina y aloe, 500ml" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Shampoo Vitael</h5>
+              <p>Con keratina y aloe - 500ml - $22.000</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="Img/combo.png" class="d-block img-carrusel" alt="Imagen del Combo Belleza Total, incluye shampoo, acondicionador y mascarilla" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Combo Belleza Total</h5>
+              <p>Incluye shampoo, acondicionador y mascarilla - $47.000</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev" aria-label="Ver producto anterior">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next" aria-label="Ver siguiente producto">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+    <input type="text" id="buscador" placeholder="Buscar producto..." class="form-control mb-4 w-50 mx-auto">
+
+    <!-- 🛍️ Sección de productos -->
+    <section class="container my-5" id="productos">
+      <h2 class="text-center mb-4">Nuestros Productos</h2>
+      <div class="row" id="lista-productos">
+        <!-- Productos se agregarán aquí dinámicamente -->
+      </div>
+    </section>
+
+    <!-- 🏷️ Sección de promociones -->
+    <section class="container my-5 text-center" id="promociones">
+      <h2 class="text-center mb-4">Promociones</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <img src="Img/promo-delineador-desodorante.jpg" class="card-img-top" alt="Imagen de Desodorante 300ml y Delineador 25g" />
+            <div class="card-body">
+              <h5 class="card-title">Desodorante 300 ml + Delineador 25 g</h5>
+              <p class="card-text">¡Por tan solo $18.999! Aprovecha esta increíble promoción para mantenerte fresca y radiante todo el día.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Más promociones -->
+      </div>
+    </section>
+
+    <!-- 💡 Sección Tips -->
+    <section class="container my-5" id="tips">
+      <h2 class="text-center mb-4">Tips de Belleza</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img src="Img/Desmaquillarse.jpg" alt="Tip de belleza sobre desmaquillarse" class="card-img-top" style="max-height: 300px; object-fit: cover;" />
+            <div class="card-body">
+              <h5 class="card-title">¿Por qué es importante desmaquillarse antes de dormir?</h5>
+              <p class="card-text" style="color: #000;">
+                Las impurezas asfixian la piel al impedir una correcta regeneración. Por eso es necesario un completo ritual de limpieza,
+                tanto de día como de noche, para asegurar que tu piel luzca más radiante.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón para abrir el carrito -->
+    <button id="ver-carrito" class="btn btn-outline-success position-fixed top-0 end-0 m-4" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+      🛒 Ver carrito
+    </button>
+
+    <!-- Modal del carrito -->
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCarritoLabel">🛍️ Tu carrito de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group" id="lista-carrito">
+          <!-- Los productos se agregarán aquí dinámicamente -->
+        </ul>
+        <div class="mt-3 text-end">
+          <strong>Total: $<span id="total-carrito">0</span></strong>
+        </div>
+
+        <!-- 📝 Formulario de datos de usuario -->
+        <div class="mt-4">
+          <h6>Datos de la compra</h6>
+          <div class="mb-2">
+            <input type="text" class="form-control" id="compra-nombre" name="compra-nombre" placeholder="Tu nombre completo" required />
+          </div>
+          <div class="mb-2">
+  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Tu número de teléfono (opcional)" />
+</div>
+<div class="mb-2">
+  <input type="text" class="form-control" id="asunto" name= "asunto"  placeholder="Asunto del pedido (opcional)" />
+</div>
+          <div class="mb-2">
+            <input type="email" class="form-control" id="compra-email" name="compra-email" placeholder="Tu correo electrónico" required />
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" id="compra-detalle" rows="3" name="compra-detalle" placeholder="Detalles adicionales del pedido (opcional)"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button class="btn btn-primary" onclick="finalizarCompra()">Finalizar compra</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- 🔽 Formulario oculto agregado aquí -->
+            <form id="form-compra" style="display: none;">
+              <input type="text" name="user_name" id="formulario-nombre" />
+              <input type="email" name="user_email" id="Formulario-email" />
+              <textarea name="mensaje" id="Formulario-detalle"></textarea>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📬 Formulario de Contacto -->
+    <section class="container my-5" id="contacto">
+      <h2 class="text-center mb-4">Contáctanos</h2>
+      <form id="form-contacto">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" class="form-control" id="asunto" name="asunto" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" autocomplete="tel" required />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+  <textarea class="form-control" id="mensaje" name="mensaje" rows="4" autocomplete="off" required></textarea>
+</div>
+<div class="col-12 text-center">
+  <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+</div>
+
+<!--📍 Footer -->
+<footer class="bg-light py-4 text-center">
+  <p>&copy; 2025 Voé Bloom | Todos los derechos reservados</p>
+</footer>
+
+<!-- Bootstrap 5 JavaScript Bundle (incluye Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+
+<script type="text/javascript">
+    (function(){
+      emailjs.init("UeldQkoTcTz1EtFOo");
+    })();
+  </script>
+
+<!-- Script personalizado -->
+<script src="script.js/main.js" defer></script>
+
+<!-- Alerta flotante de producto agregado -->
+<div id="alerta-producto" class="alerta-producto">
+  <span id="mensaje-alerta"></span>
+</div>
+
+</body>
+</html>
+
+
